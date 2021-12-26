@@ -1,0 +1,171 @@
+%
+% Define document options
+%
+\documentclass[12pt,a4paper]{article}
+
+%
+% Package imports
+%
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+
+% Translations
+\usepackage[slovene,english]{babel}
+
+% Generates dummy text
+\usepackage{lipsum}
+
+% € symbol
+\usepackage{eurosym}
+
+% Image support
+\usepackage{graphicx}
+
+% Special enumerates (letters, roman...)
+\usepackage{enumerate}
+
+%
+% Author info
+%
+\title{Tečaj LaTeXa}
+\author{Jaz}
+\date{\today}
+
+%
+% Document body
+%
+\begin{document}
+
+    \begin{titlepage}
+        
+        \maketitle
+
+        % Alternatively \centering <text>
+        \begin{center}
+            Mentor: Ime Priimek
+            
+            % Fills vertical space
+            \vfill
+            Trivago
+        \end{center}
+    \end{titlepage}
+
+    % Translates pre-defined text into Slovene
+    \selectlanguage{slovene}
+
+    % Creates table of contents
+    \tableofcontents
+
+    % List of figures (images)
+    \renewcommand{\listfigurename}{Kazalo slik}
+    \listoffigures
+
+    % List of tables
+    \renewcommand{\listtablename}{Kazalo tabel}
+    \listoftables
+
+    \newpage
+    \selectlanguage{english}
+    \begin{abstract}
+        \lipsum[1]
+    \end{abstract}
+
+    \selectlanguage{slovene}
+    \begin{abstract}
+        \lipsum[1]
+    \end{abstract}
+
+    \vfill
+    \noindent % Doesn't do an extra indent
+
+    % Make text bold
+    \textbf{Ključne besede:} ena, dva, tri, štiri \\ % equals a new line
+    \textbf{Keywords:} one, two, three, four
+
+    % Start on a new page
+    \newpage
+    \section{Uvod}
+    \lipsum[1]
+
+    % Create a list
+    \begin{itemize}
+        \item Dot,
+        \item Dot,
+        \item Dot.
+    \end{itemize}
+
+    \section{Dva}
+    \lipsum[1]
+    \subsection{Podnaslov}
+    \lipsum[2]
+    \subsection{Yay}
+    Euro: \euro
+
+    \newpage
+    \section{Three}
+    
+    % Simple way to include images
+    %\includegraphics[width=50mm]{../res/doktor.jpg}
+
+    Blah blah blah, reference image \ref{meme}.
+
+    % Advanced images
+    \begin{figure}[h]
+        \centering
+
+        % width/height are also available
+        \includegraphics[scale=0.2]{../res/doktor.jpg}
+        \caption{Shitty Meme}
+
+        % For referencing the image
+        \label{meme}
+    \end{figure}
+
+    \subsection{Enumerate}
+
+    \begin{enumerate}
+        \item One,
+        \item Two,
+        \item Three,
+        \item Four.
+    \end{enumerate}
+
+    \subsection{Enumerate 2}
+
+    \begin{enumerate}[a)]
+        \item One,
+        \item Two,
+        \item Three.
+    \end{enumerate}
+
+    \subsection{Enumerate 3}
+
+    \begin{enumerate}[I.]
+        \item \underline{One},
+        \item Two,
+        \item Three.
+    \end{enumerate}
+
+    \newpage
+    \section{Tabele}
+
+    \begin{table}[h]
+        \begin{center}
+            \begin{tabular}{r | r | r | r}
+                \textbf{Bold} & One & Two & Three \\
+                \hline
+                Močno & Ena & Dva & Tri \\
+                Idk & Pet & Three & Meme
+            \end{tabular}
+        \end{center}
+
+        \caption{Ime tabele}
+        \label{tab:tabela1}
+    \end{table}
+
+    \lipsum[1]
+
+    \noindent\\
+    Reference my table numbered \ref{tab:tabela1}.
+
+\end{document}

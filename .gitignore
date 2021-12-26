@@ -1,0 +1,10 @@
+# Filter LaTeX trash
+src/*.aux
+src/*latexmk
+src/*.log
+src/*.fls
+src/*.toc
+src/*.gz
+src/*.lot
+src/*.lof
+*.pdf
